@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1 class="titre">PC pour le type : {{ type_pc }}</h1>
+
+    {% if pcs %}
+        <div class="table-container">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Nom du PC</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pc in pcs %}
+                        <tr>
+                            <td>{{ pc.nom_pc }}</td>
+                            <td>{{ pc.prix_pc }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    {% endif %}
+{% endblock content %}
